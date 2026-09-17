@@ -1,42 +1,45 @@
-# Product Catalog - Nice Gadgets
+# Product Catalog – Nice Gadgets
 
-A modern, responsive e-commerce web application for discovering and purchasing tech devices. Built with **React**, **TypeScript**, and **Vite**, featuring interactive product sliders, full-text search, persistent favorites, shopping cart management.
+A modern, responsive e-commerce web application for discovering and purchasing tech devices. Built with **React**, **TypeScript**, and **Vite**, featuring interactive product sliders, full-text search, persistent shopping cart, favorites management, and multi-language support.
 
-## Live Demo
-[View Live Demo](https://owldevcua.github.io/phone-catalog/)
+## Live Demo & Design
+* **Live Demo:** [Nice Gadgets Store](https://owldevcua.github.io/react_phone-catalog/)
+* **Design Reference:** [Figma Design (Dark Mode)](https://www.figma.com/file/BUusqCIMAWALqfBahnyIiH/Phone-catalog-(V2)-Original-Dark)
 
-## Design Reference
-- [Figma Design](https://www.figma.com/file/BUusqCIMAWALqfBahnyIiH/Phone-catalog-(V2)-Original-Dark)
+---
 
-## Key Features
-* **Product Catalog & Details**: Dynamic filtering, pagination, and detailed product specifications.
-* **Search & Filter**: Real-time product search and category sorting.
-* **Shopping Cart & Favorites**: Add items to cart/favorites with state persistence.
-* **Interactive UI**: Responsive sliders/carousels powered by `Swiper` and UI transitions with `Headless UI` and `React Transition Group`.
-* **Testing**: E2E integration test suite powered by `Cypress`.
+## Comprehensive Features
 
-## Technologies Used
+* **Home & Landing Experience:**
+  * **Hero Picture Slider:** Auto-playing banner carousel for featured promotions (`Swiper`).
+  * **Product Carousels:** "Hot Prices" and "Brand New Models" blocks with dynamic sorting and horizontal scroll.
+  * **Category Navigation:** Direct access to Phones, Tablets, and Accessories with item counters.
 
-### Core & State
-* **React** (v18.3.1) – UI library
-* **TypeScript** (v5.2.2) – Static typing
-* **React Router** (v6.25.1) – Client-side routing
+* **Product Catalog & Details Page:**
+  * **Dynamic Filtering & Pagination:** URL-synced controls for items-per-page and sorting (by price, year, or age).
+  * **Interactive Details View:** Full product specifications, expandable image gallery, and breadcrumb navigation.
+  * **Search Functionality:** Real-time search with query parameters integrated into the navigation bar.
 
-### Styling & UI Components
-* **Sass (SCSS)** (v1.77.8) – CSS pre-processing
-* **Bulma** (v1.0.1) – CSS framework
-* **@headlessui/react** (v2.2.9) – Unstyled UI components
-* **Swiper** (v12.1.0) – Touch slider & carousel
-* **FontAwesome** (v6.5.2) – Icon set
-* **classnames** (v2.5.1) – Conditional class names utility
+* **Cart & Favorites Management:**
+  * **Persistent State:** Cart items and favorited products remain saved across sessions via `localStorage`.
+  * **Cart Interactions:** Dynamic price calculations, quantity adjustments, item removal, and checkout modal simulation.
 
-### Development & Build
-* **Vite** (v5.3.1) – Next-generation frontend tooling
-* **gh-pages** – Automated deployment to GitHub Pages
+* **Architecture & Utilities:**
+  * **Custom Provider Composition:** Clean context aggregation using a custom `compose` utility to wrap state providers without prop-drilling.
+  * **Motion:** Smooth UI transitions (`Headless UI` / `React Transition Group`).
 
-### Testing & Code Quality
-* **Cypress** (v13.13.0) – End-to-end testing suite
-* **Mochawesome** – Test report generation
-* **ESLint** (Airbnb TypeScript config) – Code linting
-* **Stylelint** – SCSS formatting & linting
-* **Prettier** – Code formatting
+---
+
+## Technical Challenges & Solutions
+
+* **Context State Scalability:**
+  * *Challenge:* Managing separate contexts for Products, Cart, Favorites, Phones, Tablets, and Accessories led to deep nesting in the root tree.
+  * *Solution:* Implemented a custom functional `compose` utility to cleanly chain multiple `React Context` providers at the root level.
+
+* **GitHub Pages Routing & Asset Resolution:**
+  * *Challenge:* Deploying a single-page application (SPA) with nested paths to a subfolder repository resulted in 404 errors and broken assets.
+  * *Solution:* Migrated to `HashRouter` and configured relative base paths in Vite (`base: './'`) to ensure seamless navigation on static hosting.
+
+* **Dart Sass & Modern Build Pipelines:**
+  * *Challenge:* Legacy SCSS `@import` rules triggered deprecation warnings in newer Dart Sass versions during Vite builds.
+  * *Solution:* Refactored global and component-level style imports to the modern `@use` module system with explicit namespaces and mixins.
