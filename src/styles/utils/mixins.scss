@@ -1,11 +1,13 @@
+@use "variables";
+
   @mixin on-tablet {
-    @media (max-width: $tablet-max-width) {
+    @media (max-width: variables.$tablet-max-width) {
       @content;
     }
   }
 
   @mixin on-mobile {
-    @media (max-width: $mobile-max-width) {
+    @media (max-width: variables.$mobile-max-width) {
       @content;
     }
   }
