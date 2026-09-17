@@ -1,0 +1,17 @@
+@use './styles/utils/mixins' as *;
+@use './styles/utils/variables' as *;
+
+.App {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  @include content-padding-inline;
+}
