@@ -1,5 +1,5 @@
-@import '../../styles/utils/variables';
-@import '../../styles/utils/mixins';
+@use '../../styles/utils/variables';
+@use '../../styles/utils/mixins';
 
 .menu {
   height: calc(100dvh - 48px);
