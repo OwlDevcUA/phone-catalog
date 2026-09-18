@@ -35,9 +35,13 @@ export const CatalogPage: React.FC<Props> = ({ category, title }) => {
     let list = products;
 
     if (query) {
-      list = list.filter(product =>
-        product.name.toLowerCase().includes(query.toLowerCase()),
-      );
+      const searchWords = query.trim().toLowerCase().split(/\s+/);
+
+      list = list.filter(product => {
+        const productName = product.name.toLowerCase();
+
+        return searchWords.every(word => productName.includes(word));
+      });
     }
 
     switch (sort) {

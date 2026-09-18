@@ -75,6 +75,7 @@
     aspect-ratio: 1 / 1;
     overflow: hidden;
     background-color: black;
+    @include hover(transform, scale(0.9));
   }
 
   &__imgLinkPhone {

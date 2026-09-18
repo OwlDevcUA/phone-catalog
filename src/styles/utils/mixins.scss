@@ -52,3 +52,10 @@
       (100% - ($view * $gap)) / $items
     );
   }
+
+  @mixin hover($property, $toValue) {
+  transition: #{$property} 1s;
+  &:hover {
+    #{$property}: $toValue;
+  }
+}

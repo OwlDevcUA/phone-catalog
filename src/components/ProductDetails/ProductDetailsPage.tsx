@@ -137,7 +137,7 @@ export const ProductDetailsPage: React.FC<Props> = ({ category, title }) => {
       <div className={styles.productDetails__labels}>
         <button
           className={styles.productDetails__backBtn}
-          onClick={() => navigate(-1)}
+          onClick={() => navigate(`/${category}`)}
         >
           <img src={arrow} className={styles.productDetails__backBtnArrow} />
           Back
