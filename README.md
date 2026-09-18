@@ -3,7 +3,7 @@
 A modern, responsive e-commerce web application for discovering and purchasing tech devices. Built with **React**, **TypeScript**, and **Vite**, featuring interactive product sliders, full-text search, persistent shopping cart, favorites management, and multi-language support.
 
 ## Live Demo & Design
-* **Live Demo:** [Nice Gadgets Store](https://owldevcua.github.io/react_phone-catalog/)
+* **Live Demo:** [Nice Gadgets Store](https://owldevcua.github.io/phone-catalog/)
 * **Design Reference:** [Figma Design (Dark Mode)](https://www.figma.com/file/BUusqCIMAWALqfBahnyIiH/Phone-catalog-(V2)-Original-Dark)
 
 ---
